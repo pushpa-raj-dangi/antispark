@@ -3,11 +3,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import authService from "../services/auth.service";
 import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const LoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
+  const navigation = useNavigate();
 
   const {
     register,
@@ -21,22 +23,20 @@ const LoginRegister = () => {
       ? await authService
           .login(data)
           .then((x) => {
-            console.log(x);
-
-            localStorage.setItem("user", x);
+            localStorage.setItem("user", JSON.stringify(x));
+            navigation("/");
             toast({
               title: "Login successful",
-              description: x.displayName + " welcome to AntiSpark",
+              description: "Welome " + x.displayName,
               status: "success",
-              duration: 1000,
+              duration: 3000,
               position: "bottom right",
               isClosable: true,
             });
           })
           .catch((err) => {
-            console.log(err);
             toast({
-              title: err.response.data,
+              title: err,
               description: "Unable to login",
               status: "error",
               duration: 1000,
@@ -44,17 +44,23 @@ const LoginRegister = () => {
               isClosable: true,
             });
           })
-          .finally(() => setIsSubmitting(false))
+          .finally(() => {
+            setIsSubmitting(false);
+          })
       : await authService
           .register(data)
           .then((x) => {
             console.log(x);
           })
-          .then((x) => {
-            console.log(x);
-          })
           .catch((err) => {
-            console.log(err);
+            toast({
+              title: err,
+              description: "Unable to register",
+              status: "error",
+              duration: 1000,
+              position: "bottom right",
+              isClosable: true,
+            });
           })
           .finally(() => setIsSubmitting(false));
   };
@@ -91,7 +97,7 @@ const LoginRegister = () => {
               mt={"20"}
               textColor="white"
             >
-              Welcome back <span style={{ color: "yellow" }}>AntiSpark</span>
+              <span style={{ color: "yellow" }}>AntiSpark</span>
             </Heading>
             <Heading
               as={"h6"}

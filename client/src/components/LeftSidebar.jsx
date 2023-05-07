@@ -7,6 +7,7 @@ import { FiSettings } from "react-icons/fi";
 import { FcCalendar } from "react-icons/fc";
 import { RxPerson } from "react-icons/rx";
 import { MdOutlineExplore } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const LeftSidebar = () => {
   // const getRandomNumber = (min, max) => {
@@ -68,12 +69,14 @@ const LeftSidebar = () => {
               alt="Arti spark logo"
             />
             <Box pl={2}>
-              <Heading as="h5" fontSize={"15"}>
-                <span>John Doe</span>
-              </Heading>
-              <Heading as={"h6"} color="gray.500" fontSize="10">
-                @johndoe
-              </Heading>
+              <Link to="/profile/1">
+                <Heading as="h5" fontSize={"15"}>
+                  <span>John Doe</span>
+                </Heading>
+                <Heading as={"h6"} color="gray.500" fontSize="10">
+                  @johndoe
+                </Heading>
+              </Link>
             </Box>
           </Flex>
         </Box>
@@ -88,8 +91,16 @@ const LeftSidebar = () => {
           position="sticky"
           borderColor="gray.200"
         >
-          <List spacing={3}>
-            <ListItem>
+          <List>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
               <Flex alignItems={"center"}>
                 <ListIcon
                   as={GrHomeRounded}
@@ -109,7 +120,15 @@ const LeftSidebar = () => {
               </Flex>
             </ListItem>
             <Divider orientation="horizontal" borderColor={"gray.100"} />
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
               <Flex alignItems={"center"}>
                 <ListIcon as={BsPersonVideo3} color="green.500" />
                 <Heading
@@ -125,7 +144,16 @@ const LeftSidebar = () => {
               </Flex>
             </ListItem>
             <Divider orientation="horizontal" borderColor={"gray.100"} />
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
               <Flex alignItems={"center"}>
                 <ListIcon as={MdOutlineExplore} color="green.500" />
                 <Heading
@@ -142,7 +170,15 @@ const LeftSidebar = () => {
             </ListItem>
             <Divider orientation="horizontal" borderColor={"gray.100"} />
 
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
               <Flex alignItems={"center"}>
                 <ListIcon as={HiOutlinePhoto} color="green.500" />
                 <Heading
@@ -158,7 +194,16 @@ const LeftSidebar = () => {
               </Flex>
             </ListItem>
             <Divider orientation="horizontal" borderColor={"gray.100"} />
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
               <Flex alignItems={"center"}>
                 <ListIcon as={FcCalendar} color="green.500" />
                 <Heading
@@ -175,7 +220,16 @@ const LeftSidebar = () => {
             </ListItem>
 
             <Divider orientation="horizontal" borderColor={"gray.100"} />
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
               <Flex alignItems={"center"}>
                 <ListIcon as={RxPerson} color="green.500" />
                 <Heading
@@ -191,7 +245,16 @@ const LeftSidebar = () => {
               </Flex>
             </ListItem>
             <Divider orientation="horizontal" borderColor={"gray.100"} />
-            <ListItem flex={"flex"}>
+            <ListItem
+              px={"2"}
+              py={2}
+              _hover={{
+                bg: "gray.100",
+                rounded: "2px",
+                cursor: "pointer",
+              }}
+            >
+              {" "}
               <Flex alignItems={"center"}>
                 <ListIcon as={FiSettings} color="green.500" />
                 <Heading
