@@ -4,9 +4,10 @@ import { InputGroup, InputLeftAddon, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import ChatWindowContainer from "./ChatWindowContainer";
+import { Link } from "react-router-dom";
 
 const RightSidebar = () => {
-  const [chatHeads, setChatHeads] = useState([1]);
+  const [chatHeads, setChatHeads] = useState([]);
   const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
   };
@@ -80,40 +81,42 @@ const RightSidebar = () => {
             mb={"5"}
             borderColor="gray.200"
           >
-            <Flex alignItems={"center"}>
-              <Image
-                h={10}
-                border={1}
-                borderColor={"gray.300"}
-                rounded={"md"}
-                src={"https://randomuser.me/api/portraits/men/85.jpg"}
-                alt="Arti spark logo"
-              />
-              <Box pl={2}>
-                <Heading as="h5" p="2" fontSize={"14"}>
-                  <Heading as="span" fontWeight={"semibold"} fontSize={"14"}>
-                    Pushpa Raj Dangi
-                  </Heading>
-                  <Heading
-                    as="span"
-                    color={"gray.500"}
-                    fontWeight={"normal"}
-                    fontSize={"14"}
-                  >
-                    <br />
+            <Link to="/profile/1">
+              <Flex alignItems={"center"}>
+                <Image
+                  h={10}
+                  border={1}
+                  borderColor={"gray.300"}
+                  rounded={"md"}
+                  src={"https://randomuser.me/api/portraits/men/85.jpg"}
+                  alt="Arti spark logo"
+                />
+                <Box pl={2}>
+                  <Heading as="h5" p="2" fontSize={"14"}>
+                    <Heading as="span" fontWeight={"semibold"} fontSize={"14"}>
+                      Pushpa Raj Dangi
+                    </Heading>
                     <Heading
                       as="span"
-                      pt="3"
+                      color={"gray.500"}
                       fontWeight={"normal"}
-                      fontSize={"xs"}
+                      fontSize={"14"}
                     >
-                      {" "}
-                      follow you{" "}
+                      <br />
+                      <Heading
+                        as="span"
+                        pt="3"
+                        fontWeight={"normal"}
+                        fontSize={"xs"}
+                      >
+                        {" "}
+                        follow you{" "}
+                      </Heading>
                     </Heading>
                   </Heading>
-                </Heading>
-              </Box>
-            </Flex>
+                </Box>
+              </Flex>
+            </Link>
             <Flex alignItems={"center"} mx={"2.5"} mt="2">
               <Box
                 rounded={"md"}

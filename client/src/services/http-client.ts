@@ -24,4 +24,4 @@ api.interceptors.response.use(
   }
 );
 
-export { api, axios as default };
+export { api as default };

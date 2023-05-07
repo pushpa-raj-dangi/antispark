@@ -3,6 +3,7 @@ import { Input, InputGroup, InputLeftAddon } from "@chakra-ui/react";
 import { CiSearch } from "react-icons/ci";
 import Logo from "../assets/logo-main.png";
 import { BsBell } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
@@ -24,7 +25,9 @@ const Menu = () => {
         gap="10"
       >
         <GridItem>
-          <Image h={"8"} src={Logo} alt="Arti spark logo" />
+          <Link to={"/"}>
+            <Image h={"8"} src={Logo} alt="Arti spark logo" />
+          </Link>
         </GridItem>
         <GridItem>
           <InputGroup size="sm" rounded={"md"}>
@@ -44,21 +47,25 @@ const Menu = () => {
         </GridItem>
         <GridItem ml={20}>
           <Flex alignItems={"center"}>
-            <Image
-              h={10}
-              border={1}
-              borderColor={"gray.300"}
-              rounded={"md"}
-              src={"https://randomuser.me/api/portraits/men/85.jpg"}
-              alt="Arti spark logo"
-            />
+            <Link to="/profile/1">
+              <Image
+                h={10}
+                border={1}
+                borderColor={"gray.300"}
+                rounded={"md"}
+                src={"https://randomuser.me/api/portraits/men/85.jpg"}
+                alt="Arti spark logo"
+              />
+            </Link>
             <Box pl={2}>
-              <Heading as="h5" fontSize={"15"}>
-                <span>Selna Gomez</span>
-              </Heading>
-              <Heading as={"h6"} color="gray.500" fontSize="10">
-                @selena_gomez
-              </Heading>
+              <Link to={"/profile/1"}>
+                <Heading as="h5" fontSize={"15"}>
+                  <span>Selna Gomez</span>
+                </Heading>
+                <Heading as={"h6"} color="gray.500" fontSize="10">
+                  @selena_gomez
+                </Heading>
+              </Link>
             </Box>
             <Box ml={10}>
               <BsBell size={20} />
