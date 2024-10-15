@@ -1,7 +1,6 @@
 ## Artispark
 
-Artispark is a web application that provides personalized recommendations using a cosine similarity algorithm.
-Built with .NET Core Web API, React, and Python, it aims to deliver a seamless user experience with robust backend services and interactive frontend features.
+Artispark is a web-based art-sharing application built with .NET Core Web API, React, and Python. It allows users to share their artwork, engage with others through likes and comments, and receive personalized recommendations based on their interactions.
 
 ## Features
 
