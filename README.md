@@ -20,8 +20,8 @@ Built with .NET Core Web API, React, and Python, it aims to deliver a seamless u
 - **Backend**: 
   - .NET Core Web API
   - Entity Framework Core
-  - SQL Server (or any other database)
-
+  - SQLite
+  
 - **Recommendation Algorithm**: 
   - Python
   - Cosine Similarity for recommendations
